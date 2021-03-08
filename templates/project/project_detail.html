@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main_content %}
+<section class="page-header padding">
+    <div class="container">
+        <div class="page-content text-center">
+            <h2>{{ single_project.title}}</h2>
+            <p>{{ single_project.sub_title }}</p>
+        </div>
+    </div>
+</section>
+{% for i in single_project.project_image.all %}
+ <img src="{{i.image.url}}" alt="img">
+{% endfor %}
+<section class="project-single-section padding">
+    <div class="container">
+        <div class="row project-single-wrap align-items-center">
+            <div class="col-md-6 sm-padding">
+                <div id="project-single-carousel"
+                     class="project-single-carousel box-shadow owl-carousel owl-theme owl-loaded">
+
+
+                    <div class="owl-stage-outer">
+                        <div class="owl-stage"
+                             style="transform: translate3d(-2725px, 0px, 0px); transition: all 0.5s ease 0s; width: 3815px;">
+
+                            <!--<div class="owl-item" style="width: 540px; margin-right: 5px;">
+
+                                <div class="single-carousel">
+                                    <img src="" alt="img">
+                                </div>
+
+                            </div>
+
+                            <div class="owl-item cloned" style="width: 540px; margin-right: 5px;">
+                                <div class="single-carousel">
+                                    <img src="img/project-s-3.jpg" alt="img">
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 540px; margin-right: 5px;">
+                                <div class="single-carousel">
+                                    <img src="img/project-s-1.jpg" alt="img">
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 540px; margin-right: 5px;">
+                                <div class="single-carousel">
+                                    <img src="img/project-s-2.jpg" alt="img">
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 540px; margin-right: 5px;">
+                                <div class="single-carousel">
+                                    <img src="img/project-s-3.jpg" alt="img">
+                                </div>
+                            </div>
+                            <div class="owl-item cloned active" style="width: 540px; margin-right: 5px;">
+                                <div class="single-carousel">
+                                    <img src="img/project-s-1.jpg" alt="img">
+                                </div>
+                            </div>-->
+                            {% for i in single_project.project_image.all %}
+                            <div class="owl-item" style="width: 540px; margin-right: 5px;">
+                                <div class="single-carousel">
+<!--                                    <img src="img/project-s-2.jpg" alt="img">-->
+                                    <img src="{{ i.image.url }}" alt="img">
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="owl-controls">
+                        <div class="owl-nav">
+                            <div class="owl-prev" style="display: none;"><i class="fa fa-caret-left"></i></div>
+                            <div class="owl-next" style="display: none;"><i class="fa fa-caret-right"></i></div>
+                        </div>
+                        <div class="owl-dots" style="">
+                            <div class="owl-dot active"><span></span></div>
+                            <div class="owl-dot"><span></span></div>
+                            <div class="owl-dot"><span></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 sm-padding">
+                <div class="project-single-content">
+                    <h2>{{ single_project.title }}</h2>
+                    <p>{{ single_project.description }}</p>
+                    <ul class="project-details">
+                        <li><span>Architects</span>: {{ single_project.architects }}</li>
+                        <li><span>Location</span>: {{ single_project.location }}</li>
+                        <li><span>Category</span>:{{ single_project.category }}</li>
+                        <li><span>Area</span>: {{ single_project.area }}</li>
+                        <li><span>Project Year</span>: {{ single_project.project_start|date:"Y" }}/{{ single_project.project_end|date:"Y" }}</li>
+                        <li><span>Manufactures</span>: {{ single_project.manufactures }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock main_content %}
