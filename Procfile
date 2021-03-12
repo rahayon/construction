@@ -1,1 +1,1 @@
-web: gunicorn 'constructon_project.wsgi
+web: gunicorn constructon_project.wsgi
