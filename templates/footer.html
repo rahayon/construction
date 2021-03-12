@@ -1,11 +1,14 @@
-{% load custom_tags %}
 <section class="widget-section padding">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-sm-6 sm-padding">
                 <div class="widget-content">
-                    <a href="#"><img src="img/logo-light.png" alt="brand"></a>
-                    <p>Building your own home is about desire, fantasy. But it’s achievable anyone can do it.</p>
+                    <a href="#">
+                        {% if info.footer_logo %}
+                        <img src="{{ info.footer_logo.url }}" alt="Indico">
+                        {% endif %}
+                        
+                    <p class="text-light">{{ info.description }}</p>
                 </div>
             </div>
             <div class="col-lg-2 col-sm-6 sm-padding">
@@ -22,10 +25,9 @@
             <div class="col-lg-3 col-sm-6 sm-padding">
                 <div class="widget-content">
                     <h4>Headquaters</h4>
-                    <p>{{ my_settings.address }}</p>
-                    <span><a href="http://html.dynamiclayers.net/cdn-cgi/l/email-protection" class="__cf_email__"
-                             data-cfemail="a8e0cdc4c4c7e8e9c4cdd0c9fcc0cdc5cd86c6cddc">[email&#160;protected]</a></span>
-                    <span></span>
+                    <p>{{ info.address }}</p>
+                    <span><a class="text-light" href="mailto:{{ info.email }}">{{ info.email }}</a></span>
+                    <span>{{ info.phone }}</span>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6 sm-padding">

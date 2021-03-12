@@ -4,7 +4,14 @@
         <div class="container">
             <div class="primary-header-inner">
                 <div class="header-logo">
-                    <a href="#"><img src="" alt="Indico"></a>
+                    <a href="#">
+                        
+                        {% if info.header_logo %}
+                        <img src="{{ info.header_logo.url }}" alt="Indico">
+                        {% endif %}
+                            
+                        
+                    </a>
                 </div>
                 <div class="header-menu-wrap">
                     <ul class="dl-menu">

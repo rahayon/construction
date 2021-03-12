@@ -18,7 +18,7 @@
     <meta name="author" content="AlexaTheme">
 
     <title>{% block title %}{% endblock title %}</title>
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{% if info.favicon%} {{ info.favicon.url }} {% endif %}">
 
     <link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}">
 

@@ -4,7 +4,9 @@ from django.db import models
 # Create your models here.
 class Settings(models.Model):
     title = models.CharField(max_length=100)
-    logo = models.ImageField(upload_to='Logo', blank=True)
+    header_logo = models.ImageField(upload_to='Logo', blank=True)
+    footer_logo =models.ImageField(upload_to='Logo', blank=True)
+    favicon =models.ImageField(upload_to='Logo', blank=True)
     description = models.TextField(blank=True)
     company = models.CharField(max_length=50)
     address = models.TextField(blank=True)
